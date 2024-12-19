@@ -100,7 +100,7 @@ const Login = () => {
                   <Link to="/Registr" className={`nav-link ${isActive('/Registr') ? 'disabled' : ''}`}>Регистрация</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/Search" className={`nav-link ${isActive('/Search') ? 'disabled' : ''}`}>Поиск по объявлениям</Link>
+                  <Link to="/AnimalSearch" className={`nav-link ${isActive('/AnimalSearch') ? 'disabled' : ''}`}>Поиск по объявлениям</Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/Add" className={`nav-link ${isActive('/Add') ? 'disabled' : ''}`}>Добавить объявление</Link>

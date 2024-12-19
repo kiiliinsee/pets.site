@@ -7,7 +7,8 @@ import Registr from "./components/pages/registr";
 import Search from "./components/pages/search";
 import {Routes, Route} from "react-router-dom";
 import Login from './components/header';
-
+import AnimalSearch from './components/pages/animalSearch';
+import DetailsPage from './components/details';
 
 
 
@@ -19,9 +20,10 @@ function App() {
         <Route path="/Index" element={<Index />} />
         <Route path="/Kabinet" element={<Kabinet />} />
         <Route path="/Registr" element={<Registr />} />
-        <Route path="/Search" element={<Search />} />
+        <Route path="/AnimalSearch" element={<AnimalSearch />} />
         <Route path="/Add" element={<Add />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/details/:id" element={<DetailsPage />} />
       </Routes>
     </div>
     </div>

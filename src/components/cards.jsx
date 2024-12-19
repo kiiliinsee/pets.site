@@ -1,29 +1,44 @@
-import kot from '../components/images/kot.jpg'
-import koza from '../components/images/koza.jpg'
-import React from 'react';
-
+import { useNavigate } from "react-router-dom";
+ 
 function Cards(props) {
-  return (
-    <div>
-       
-        <div className="d-flex flex-row flex-wrap justify-content-center">
-         
-            <div className="card m-3" style={{ width: '18rem', borderRadius: '15px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
-                <img src={'https://pets.сделай.site/'+props.data.photos} className="card-img-top" alt="Кошка" style={{ borderTopLeftRadius: '15px', borderTopRightRadius: '15px', height: '300px', objectFit: 'cover' }} />
-                <div className="card-body">
-                <p className="card-text"><strong>id:</strong> {props.data.id}</p>
-                <p className="card-text"><strong>Вид животного:</strong> {props.data.kind}</p>
-                    <p className="card-text"><strong>Описание:</strong> {props.data.description}</p>
-                    <p className="card-text"><strong>Номер чипа:</strong> {props.data.mark}</p>
-                    <p className="card-text"><strong>Район:</strong> {props.data.district}</p>
-                    <p className="card-text"><strong>Дата:</strong> {props.data.date}</p>
-                    <p className="card-text"><strong>Телефон:</strong> {props.data.phone}</p>
-                    <p className="card-text"><strong>Регистрация:</strong> {props.data.registred}</p>
-                </div>
+    const navigate = useNavigate();
+ 
+    const handleCardClick = () => {
+        // Переход на страницу деталей с использованием ID карточки
+        navigate(`/details/${props.data.id}`);
+    };
+ 
+    return (
+        <div 
+            className="card border m-2 p-3 d-flex flex-column justify-content-between" 
+            style={{ width: '100%', height: '850px', cursor: 'pointer' }}
+            onClick={handleCardClick} // Обработчик клика
+        >
+            <img 
+                src={`https://pets.сделай.site/${props.data.photos}`} 
+                className="card-img-top mx-auto" 
+                alt="рисунок животного" 
+                style={{ maxHeight: '300px', objectFit: 'cover', width: 'auto' }} 
+            />
+            <div className="card-body">
+                <h5 className="card-title text-center text-primary">
+                    {props.data.kind} {/* Название карточки */}
+                </h5>
+                <p className="text-primary">id:</p>
+                <p>{props.data.id}</p>
+                <p className="text-primary">Описание:</p>
+                <p>{props.data.description}</p>
+                <p className="text-primary">Номер чипа:</p>
+                <p>{props.data.mark}</p>
+                <p className="text-primary">Район:</p>
+                <p>{props.data.district}</p>
+                <p className="text-primary">Дата:</p>
+                <p>{props.data.date}</p>
+                <p className="text-primary">Телефон:</p> 
+                <p>{props.data.phone}</p>
             </div>
         </div>
-    </div>
-);
+    );
 }
-
+ 
 export default Cards;

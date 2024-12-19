@@ -3,6 +3,7 @@ import Footer from "../footer";
 import Header from "../header";
 import Kab from "../kab";
 import React, { useEffect, useState } from "react";
+import MyAds from "../MyAds";
 
 
 const Kabinet =  () => {
@@ -32,7 +33,7 @@ const Kabinet =  () => {
         <div>
             <Header/>
             {user}
-            <Animals/>
+            <MyAds/>
             <Footer/>
             
         </div>
